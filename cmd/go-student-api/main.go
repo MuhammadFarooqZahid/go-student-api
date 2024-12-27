@@ -33,6 +33,7 @@ func main() {
 
 	router.HandleFunc("POST /api/students", student.New(storage))
 	router.HandleFunc("GET /api/students/{id}", student.GetById(storage))
+	router.HandleFunc("GET /api/students", student.GetStudentsList(storage))
 
 	// Setup server
 	slog.Info("Server is running at", slog.String("address", cfg.Address))
